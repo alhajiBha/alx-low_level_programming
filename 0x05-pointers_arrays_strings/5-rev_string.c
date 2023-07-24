@@ -6,19 +6,18 @@
  */
 void rev_string(char *s)
 {
-	int i;
+	int length, j;
+	char a;
 
-	i = 0;
-
-	while (*(s + i) != '\0')
+	length = 0;
+	while (*(s + length) != '\0')
 	{
-		i++;
+		length++;
 	}
-	i = i - 1;
-	while (i >= 0)
+	for (j = 0; j < (length / 2); j++)
 	{
-		_putchar(*(s + i));
-		i--;
+		a = *(s + j);
+		*(s + j) = *(s + length - j - 1);
+		*(s + length - j - 1) = a;
 	}
-	_putchar('\n');
 }
