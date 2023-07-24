@@ -11,6 +11,7 @@ int _atoi(char *s)
 	int aux;
 
 	aux = 1;
+	counter = 0;
 	num = 0;
 
 	while (*(s + counter) != '\0')
@@ -18,7 +19,7 @@ int _atoi(char *s)
 	for (i = 0; i < counter; i++)
 	{
 		if (*(s + i) <= '9' && *(s + i) >= '0')
-			break;
+		break;
 	}
 	for (j = i; j < counter; j++)
 	{
