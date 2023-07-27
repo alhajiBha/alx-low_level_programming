@@ -5,19 +5,18 @@
  *
  *Return: pointer to uppercase string.
  */
-char *string_toupper(char *x)
+
+char *string_toupper(char *s)
 {
-	int length;
+	int i = 0;
 	
-	length = 0;
-	
-	while (x[length] != '\0')
+	while (*(s + i) != '\0')
 	{
-		if (x[length] >= 97 && x[length] <= 122)
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
 		{
-			x[length] = x[length] - 32;
+			*(s + i) = *(s + i) - 32;
 		}
-		length++;
+		i++;
 	}
-	return (x);
+	return (s);
 }
