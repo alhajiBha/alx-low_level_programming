@@ -6,7 +6,7 @@
  *Return: pointer to uppercase string.
  */
 
-char *string_toupper(char *s)
+char *string_toupper(char *x)
 {
 	int length;
 
