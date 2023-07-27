@@ -7,30 +7,28 @@
  */
 char *cap_string(char *s)
 {
-	int i, j;
-	int a[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
-	
-	i = 0;
-	while (*(s + i) != '\0')
-	{
-		if (*(s + i) >= 'a' && *(s + i) <= 'z')
+	int count;
+
+	/* scan through string*/
+	count = 0;
+	while (s[count] != '\0')
+	{/* if next character after count is a char , capitalise it */
+		if (s[0] >= 97 && s[0] <= 122)
 		{
-			if (i == 0)
+			s[0] = s[0] - 32;
+		}
+		if (s[count] == ' ' || s[count] == '\t' || s[count] == '\n'
+				|| s[count] == ',' || s[count] == ';' || s[count] == '.'
+				|| s[count] == '.' || s[count] == '!' || s[count] == '?'
+				|| s[count] == '"' || s[count] == '(' || s[count] == ')'
+				|| s[count] == '{' || s[count] == '}')
+		{
+			if (s[count + 1] >= 97 && s[count + 1] <= 122)
 			{
-				*(s + i) = *(s + i) - 32;
-			}
-			else
-			{
-				for (j = 0; j <= 12; j++)
-				{
-					if (a[j] == *(s + i - 1))
-					{
-						*(s + i) = *(s + i) - 32;
-					}
-				}
+				s[count + 1] = s[count + 1] - 32;
 			}
 		}
-		i++;
+		count++;
 	}
 	return (s);
 }
