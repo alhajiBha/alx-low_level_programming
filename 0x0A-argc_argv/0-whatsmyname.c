@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
  * main - print the name of progress
@@ -11,5 +11,6 @@
 int main(int argc __attribute__((unused)), char **argv)
 {
 	printf("%s\n", *argv);
+
 	return (0);
 }
