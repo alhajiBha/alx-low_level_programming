@@ -18,7 +18,7 @@ char *_strdup(char *str)
 	/* check is str is null */
 	if (str == NULL)
 	{
-		 return (NULL);
+		return (NULL);
 	}
 
 	len = 0;
